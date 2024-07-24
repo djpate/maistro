@@ -20,6 +20,10 @@ module Maistro
         end
       end
 
+      def interact(prompt)
+        raise NotImplementedError
+      end
+
       def role
         raise NotImplementedError
       end
