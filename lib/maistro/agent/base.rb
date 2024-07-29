@@ -1,6 +1,8 @@
 module Maistro
   module Agent
     class Base
+      attr_accessor :thread, :name
+
       def initialize(name:, thread: [])
         @thread = thread
         @name = name
