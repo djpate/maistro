@@ -1,7 +1,8 @@
 module Maistro
   module Agent
     class Base
-      def initialize(name:)
+      def initialize(name:, thread: [])
+        @thread = thread
         @name = name
       end
 
