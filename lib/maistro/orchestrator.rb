@@ -18,6 +18,12 @@ module Maistro
       NotImplementedError
     end
 
+    def agent_by_name
+      @agents.each_with_object({}) do |agent, hash|
+        hash[agent.name] = agent
+      end
+    end
+
     def agents
       str = "<agents>"
       @agents.each do |agent|
