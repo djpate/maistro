@@ -8,6 +8,16 @@ module Maistro
       @agents << agent
     end
 
+    def classify(prompt, thread)
+      prompt = "<prompt>#{prompt}</prompt>"
+      thread = "<thread>#{thread}</thread>"
+      run(prompt + thread)
+    end
+
+    def run
+      NotImplementedError
+    end
+
     def agents
       str = "<agents>"
       @agents.each do |agent|
