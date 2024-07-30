@@ -23,6 +23,16 @@ module Maistro
         end
       end
 
+      # used by the orchestrator to define the agent
+      def definition
+        <<~AGENT
+          <agent>
+            <name>#{name}</name>
+            <role>#{role}</role>
+          </agent>
+        AGENT
+      end
+
       def interact(prompt)
         raise NotImplementedError
       end
