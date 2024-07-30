@@ -1,32 +1,18 @@
 module Maistro
   module Agent
     class Base
-      attr_accessor :thread, :name
+      attr_accessor :thread, :name, :default
 
-      def initialize(name:, thread: [])
+      def initialize(name:, thread: [], default: false)
         @thread = thread
         @name = name
-      end
-
-      def discuss
-        puts "type exit to leave"
-        print 'you>'
-        prompt = gets.chomp
-        puts "#{@name}> #{interact(prompt)}"
-        puts "here"
-        while true
-          print 'you>'
-          prompt = gets.chomp
-          break if prompt == 'exit'
-
-          puts "#{@name}> #{interact(prompt)}"
-        end
+        @default = default
       end
 
       # used by the orchestrator to define the agent
       def definition
         <<~AGENT
-          <agent>
+          <agent default="#{default}">
             <name>#{name}</name>
             <role>#{role}</role>
           </agent>
