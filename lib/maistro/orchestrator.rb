@@ -60,7 +60,7 @@ module Maistro
         </agents>
 
         You know about the following agents:
-        #{@agents}
+        #{agents}
 
         The history of the conversation will be given to you in the following format:
         <thread>
